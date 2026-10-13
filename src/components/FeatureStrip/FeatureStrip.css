@@ -1,0 +1,134 @@
+.feature-strip {
+  width: 100%;
+  background-color: var(--color-ivory-warm);
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  padding: 1.25rem 2.25rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(213, 190, 178, 0.5);
+}
+
+.feature-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.feature-item-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.feature-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  width: 100%;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Outlined Icon Squircle matching reference */
+.feature-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1.5px solid var(--color-text-red);
+  color: var(--color-text-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: rgba(181, 31, 37, 0.04);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.feature-card:hover .feature-icon-box {
+  background-color: rgba(181, 31, 37, 0.1);
+  transform: scale(1.05);
+}
+
+.feature-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.feature-title {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-text-red);
+  line-height: 1.2;
+}
+
+.feature-desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--color-text-body-muted);
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+/* Thin vertical separator between items */
+.feature-divider {
+  width: 1px;
+  height: 38px;
+  background-color: var(--color-divider-fine);
+  margin: 0 1rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+/* Tablet Layout (2x2 grid) */
+@media (max-width: 1024px) {
+  .feature-strip {
+    padding: 1.25rem 1.75rem;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 1.5rem;
+  }
+
+  .feature-divider {
+    display: none;
+  }
+
+  .feature-card {
+    padding: 0.25rem 0;
+  }
+}
+
+/* Mobile Layout (Stacked 1-column flow) */
+@media (max-width: 640px) {
+  .feature-strip {
+    padding: 1.25rem 1.25rem;
+    border-radius: var(--radius-md);
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+
+  .feature-icon-box {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feature-title {
+    font-size: 1rem;
+  }
+
+  .feature-desc {
+    font-size: 0.825rem;
+  }
+}

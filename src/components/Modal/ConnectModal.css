@@ -1,0 +1,162 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background-color: rgba(30, 2, 2, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-card {
+  position: relative;
+  background-color: var(--color-ivory-warm);
+  border-radius: var(--radius-lg);
+  max-width: 500px;
+  width: 100%;
+  padding: 2.25rem 2rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-divider-fine);
+  animation: slideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  color: var(--color-text-body-muted);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: rgba(181, 31, 37, 0.1);
+  color: var(--color-text-red);
+}
+
+.modal-header {
+  margin-bottom: 1.75rem;
+}
+
+.modal-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--color-text-red);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  color: var(--color-text-red);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+}
+
+.modal-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  color: var(--color-text-body-muted);
+  line-height: 1.5;
+}
+
+.modal-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.modal-link-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-md);
+  background-color: var(--color-ivory-highlight);
+  border: 1px solid var(--color-divider-fine);
+  text-decoration: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.modal-link-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-text-red);
+  box-shadow: 0 6px 18px rgba(181, 31, 37, 0.12);
+}
+
+.modal-link-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: rgba(181, 31, 37, 0.08);
+  color: var(--color-text-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.modal-link-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.modal-link-label {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-red);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.modal-link-value {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text-body-muted);
+}
+
+.modal-link-external {
+  color: var(--color-text-subtle);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.modal-link-item:hover .modal-link-external {
+  color: var(--color-text-red);
+  transform: translate(2px, -2px);
+}

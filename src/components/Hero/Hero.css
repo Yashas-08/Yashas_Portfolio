@@ -1,0 +1,490 @@
+.hero-wrapper {
+  max-width: 1280px;
+  margin: 1.5rem auto 0;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.hero-panel {
+  position: relative;
+  background-color: var(--color-red-hero);
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-hero);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
+}
+
+/* Texture overlay for physical editorial feel */
+.hero-texture-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 25% 35%, rgba(214, 46, 54, 0.4) 0%, transparent 60%),
+    radial-gradient(circle at 85% 75%, rgba(96, 8, 8, 0.5) 0%, transparent 60%),
+    radial-gradient(rgba(0, 0, 0, 0.09) 1px, transparent 1px);
+  background-size: auto, auto, 8px 8px;
+  z-index: 1;
+}
+
+.hero-content-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  padding: 3.5rem 5.5rem 2.5rem 3.5rem;
+  gap: 2rem;
+  align-items: center;
+  min-height: 520px;
+}
+
+/* =========================================================================
+   Left Column: Typography & Bio
+   ========================================================================= */
+.hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-script-badge {
+  display: inline-flex;
+  flex-direction: column;
+  font-family: var(--font-script);
+  font-size: clamp(1.85rem, 2.75vw, 2.35rem);
+  color: var(--color-text-cream);
+  line-height: 1.05;
+  transform: rotate(-3.5deg);
+  transform-origin: left bottom;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.script-line-1 {
+  display: block;
+}
+
+.script-line-2 {
+  display: block;
+  padding-left: 1.25rem;
+}
+
+.hero-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(4.4rem, 8vw, 7.8rem);
+  font-weight: 700;
+  color: var(--color-text-cream);
+  line-height: 0.9;
+  letter-spacing: 0.025em;
+  margin-bottom: 1.35rem;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.hero-bio-paragraph {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  color: rgba(252, 246, 237, 0.92);
+  line-height: 1.65;
+  max-width: 480px;
+  margin-bottom: 2.25rem;
+  font-weight: 400;
+}
+
+/* CTA & Socials Row */
+.hero-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.hero-primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: var(--color-ivory-warm);
+  color: var(--color-text-red);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.8rem 1.75rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hero-primary-cta:hover {
+  background-color: var(--color-ivory-highlight);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.hero-primary-cta:active {
+  transform: translateY(0);
+}
+
+.cta-arrow-icon {
+  transition: transform 0.2s ease;
+}
+
+.hero-primary-cta:hover .cta-arrow-icon {
+  transform: translateX(4px);
+}
+
+.hero-cta-divider {
+  width: 1px;
+  height: 32px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.social-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  color: var(--color-text-cream);
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.social-icon-btn:hover {
+  background-color: rgba(255, 255, 255, 0.22);
+  border-color: var(--color-ivory-highlight);
+  transform: translateY(-2px);
+}
+
+/* =========================================================================
+   Right Column: Layered Stage Composition
+   ========================================================================= */
+.hero-right-col {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 440px;
+}
+
+.hero-portrait-stage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Layer 1: Dark Burgundy Backplate */
+.stage-backplate-burgundy {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 320px;
+  height: 380px;
+  background-color: var(--color-red-dark-panel);
+  border-radius: 20px;
+  transform: rotate(-7.5deg);
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Layer 2: Tilted Ivory Board */
+.stage-board-ivory {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  width: 310px;
+  height: 390px;
+  background-color: var(--color-ivory-warm);
+  border-radius: 16px;
+  transform: rotate(5.5deg);
+  z-index: 2;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Layer 3: Handwritten Note (Build Learn Improve Repeat) */
+.stage-handwritten-note {
+  position: absolute;
+  top: 50px;
+  right: 10px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  line-height: 1.15;
+  color: var(--color-text-cream);
+  transform: rotate(4deg);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.hw-line {
+  display: block;
+}
+
+.hw-flourish {
+  width: 55px;
+  margin-top: 0.15rem;
+  color: var(--color-text-cream);
+}
+
+/* Layer 4: Portrait Asset Wrapper */
+.stage-portrait-wrapper {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.stage-portrait-image,
+.stage-composition-image {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.35));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+}
+
+.stage-portrait-wrapper:hover .stage-portrait-image,
+.stage-portrait-wrapper:hover .stage-composition-image {
+  transform: scale(1.02);
+}
+
+/* Layer 5: Circular Developer Text Badge & Star */
+.stage-circular-badge {
+  position: absolute;
+  bottom: 30px;
+  right: 25px;
+  width: 110px;
+  height: 110px;
+  z-index: 6;
+  pointer-events: none;
+}
+
+.badge-svg {
+  width: 100%;
+  height: 100%;
+  animation: rotateBadge 20s linear infinite;
+}
+
+.badge-text {
+  font-family: var(--font-body);
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes rotateBadge {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.badge-star-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 18px;
+  height: 18px;
+}
+
+/* Far Right Sidebar: Section 01 + Vertical Scroll Indicator */
+.hero-scroll-aside {
+  position: absolute;
+  top: 1.75rem;
+  right: 1.75rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 7;
+  pointer-events: auto;
+}
+
+.section-number-pill {
+  background-color: var(--color-ivory-warm);
+  color: var(--color-header-burgundy);
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  line-height: 1;
+}
+
+.scroll-indicator-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  cursor: pointer;
+  color: rgba(252, 246, 237, 0.7);
+  transition: color 0.2s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.scroll-indicator-group:hover {
+  color: var(--color-ivory-highlight);
+  transform: translateY(2px);
+}
+
+.vertical-scroll-label {
+  writing-mode: vertical-rl;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  transform: rotate(180deg);
+}
+
+.scroll-mouse-icon {
+  animation: mouseBounce 2s ease-in-out infinite;
+}
+
+@keyframes mouseBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(4px);
+  }
+}
+
+/* =========================================================================
+   Responsive Breakpoints
+   ========================================================================= */
+@media (max-width: 1200px) {
+  .hero-content-grid {
+    padding: 3rem 2.5rem 2rem 2.5rem;
+  }
+
+  .hero-scroll-aside {
+    right: -1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 2rem 2.5rem 2rem;
+  }
+
+  .hero-left-col {
+    align-items: flex-start;
+  }
+
+  .hero-scroll-aside {
+    display: none;
+  }
+
+  .hero-right-col {
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-wrapper {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+
+  .hero-panel {
+    border-radius: var(--radius-md);
+  }
+
+  .hero-content-grid {
+    padding: 2.25rem 1.25rem 2rem 1.25rem;
+    gap: 2.25rem;
+  }
+
+  .hero-main-title {
+    font-size: clamp(3.4rem, 13vw, 4.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-bio-paragraph {
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions-row {
+    gap: 1rem;
+  }
+
+  .hero-primary-cta {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+  }
+
+  .hero-cta-divider {
+    display: none;
+  }
+
+  .hero-social-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-portrait-stage {
+    height: 340px;
+  }
+
+  .stage-backplate-burgundy {
+    width: 250px;
+    height: 300px;
+  }
+
+  .stage-board-ivory {
+    width: 240px;
+    height: 310px;
+  }
+
+  .stage-handwritten-note {
+    font-size: 1.2rem;
+    right: 5px;
+  }
+
+  .stage-portrait-image {
+    max-height: 330px;
+  }
+
+  .stage-circular-badge {
+    width: 85px;
+    height: 85px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
