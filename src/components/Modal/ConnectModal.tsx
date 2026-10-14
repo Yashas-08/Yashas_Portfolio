@@ -65,7 +65,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
         <div className="modal-links-list">
           {/* Email */}
           <a
-            href="mailto:yashas.k.a08@gmail.com"
+            href="mailto:yashas1325143@gmail.com"
             className="modal-link-item"
             target="_blank"
             rel="noopener noreferrer"
@@ -75,7 +75,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
             </div>
             <div className="modal-link-info">
               <span className="modal-link-label">Email Direct</span>
-              <span className="modal-link-value">yashas.k.a08@gmail.com</span>
+              <span className="modal-link-value">yashas1325143@gmail.com</span>
             </div>
             <ExternalLink size={16} className="modal-link-external" />
           </a>
@@ -120,7 +120,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
 
           {/* Instagram */}
           <a
-            href="https://www.instagram.com/yashas_08_/"
+            href="https://www.instagram.com/yashas____08/"
             className="modal-link-item"
             target="_blank"
             rel="noopener noreferrer"
@@ -134,7 +134,7 @@ export const ConnectModal: React.FC<ConnectModalProps> = ({ isOpen, onClose }) =
             </div>
             <div className="modal-link-info">
               <span className="modal-link-label">Instagram</span>
-              <span className="modal-link-value">@yashas_08_</span>
+              <span className="modal-link-value">@yashas____08</span>
             </div>
             <ExternalLink size={16} className="modal-link-external" />
           </a>

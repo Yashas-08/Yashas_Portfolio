@@ -13,25 +13,25 @@ export const FeatureStrip: React.FC = () => {
   const features: FeatureItem[] = [
     {
       id: 'ai-ml',
-      icon: <Monitor size={22} strokeWidth={1.8} className="feature-icon" />,
+      icon: <Monitor size={24} strokeWidth={1.8} className="feature-icon" />,
       title: 'AI & ML',
       description: 'Exploring intelligent solutions',
     },
     {
       id: 'web-dev',
-      icon: <Code size={22} strokeWidth={1.8} className="feature-icon" />,
+      icon: <Code size={24} strokeWidth={1.8} className="feature-icon" />,
       title: 'Web Development',
       description: 'Building modern applications',
     },
     {
       id: 'problem-solving',
-      icon: <Lightbulb size={22} strokeWidth={1.8} className="feature-icon" />,
+      icon: <Lightbulb size={24} strokeWidth={1.8} className="feature-icon" />,
       title: 'Problem Solving',
       description: 'Turning ideas into products',
     },
     {
       id: 'education',
-      icon: <GraduationCap size={22} strokeWidth={1.8} className="feature-icon" />,
+      icon: <GraduationCap size={24} strokeWidth={1.8} className="feature-icon" />,
       title: 'B.Tech CSE (AI & ML)',
       description: 'Yenepoya University, Bengaluru',
     },

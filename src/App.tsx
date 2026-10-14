@@ -95,6 +95,22 @@ export const App: React.FC = () => {
             >
               LinkedIn
             </a>
+            <span className="footer-dot">•</span>
+            <a
+              href="https://www.instagram.com/yashas____08/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              Instagram
+            </a>
+            <span className="footer-dot">•</span>
+            <a
+              href="mailto:yashas1325143@gmail.com"
+              className="footer-link"
+            >
+              Email
+            </a>
           </div>
         </div>
       </footer>

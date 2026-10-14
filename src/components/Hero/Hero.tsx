@@ -38,9 +38,13 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Factual bio paragraph */}
             <p className="hero-bio-paragraph">
-              Turning ideas into real-world solutions through code, creativity, and AI.
-              I build modern web applications and explore the possibilities of
-              Artificial Intelligence and Machine Learning.
+              Turning ideas into real-world solutions through{' '}
+              <br className="bio-break" />
+              code, creativity, and AI. I build modern web applications{' '}
+              <br className="bio-break" />
+              and explore the possibilities of Artificial Intelligence{' '}
+              <br className="bio-break" />
+              and Machine Learning.
             </p>
 
             {/* CTA & Social Links Bar */}
@@ -100,11 +104,11 @@ export const Hero: React.FC<HeroProps> = ({
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/yashas_08_/"
+                  href="https://www.instagram.com/yashas____08/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-btn instagram-btn"
-                  aria-label="Instagram Profile"
+                  aria-label="Instagram Profile (yashas____08)"
                   title="Instagram Profile"
                 >
                   <svg
