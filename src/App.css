@@ -1,10 +1,20 @@
+:root {
+  --header-height: 72px;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --header-height: 62px;
+  }
+}
+
 .portfolio-app {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   background-color: var(--color-canvas-burgundy);
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 .main-content {
@@ -12,12 +22,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  padding: 0.85rem 0 1rem;
+  padding: calc(var(--header-height) + 0.85rem) 0 3rem;
+  gap: 1.5rem;
+}
+
+.portfolio-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: calc(var(--header-height) + 16px);
 }
 
 .home-editorial-card {
+  width: calc(100% - 4vw);
+  max-width: 1640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-section-wrapper,
+.journey-section-wrapper,
+.projects-section-wrapper {
   width: calc(100% - 4vw);
   max-width: 1640px;
   margin: 0 auto;
@@ -145,7 +173,8 @@
 
 /* Responsive adjustments */
 @media (max-width: 640px) {
-  .home-editorial-card {
+  .home-editorial-card,
+  .about-section-wrapper {
     width: calc(100% - 1.5rem);
   }
 

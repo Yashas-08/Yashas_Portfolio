@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import './Header.css';
 
 interface HeaderProps {
@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const navLinks = ['Home', 'About', 'Projects', 'Skills', 'Contact'];
+  const navLinks = ['Home', 'About', 'Journey', 'Projects', 'Skills & Contact'];
 
   const handleLinkClick = (page: string) => {
     onNavClick(page);
@@ -79,16 +79,15 @@ export const Header: React.FC<HeaderProps> = ({
           </ul>
         </nav>
 
-        {/* Right: Let's Connect CTA */}
+        {/* Right: Connect CTA */}
         <div className="header-actions">
           <button
             type="button"
             className="cta-connect-btn"
             onClick={onConnectClick}
-            aria-label="Let's Connect"
+            aria-label="Connect"
           >
-            <span>Let's Connect</span>
-            <ArrowRight size={16} strokeWidth={2.5} className="cta-arrow" />
+            <span>Connect</span>
           </button>
 
           {/* Mobile Menu Toggle Button */}
@@ -132,8 +131,7 @@ export const Header: React.FC<HeaderProps> = ({
                   onConnectClick();
                 }}
               >
-                <span>Let's Connect</span>
-                <ArrowRight size={16} strokeWidth={2.5} />
+                <span>Connect</span>
               </button>
             </li>
           </ul>

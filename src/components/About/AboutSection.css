@@ -1,0 +1,686 @@
+/* =========================================================================
+   About Section - Seamless Scrolling Editorial Style
+   ========================================================================= */
+
+.about-section-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* =========================================================================
+   1. Main About Hero / Overview Panel
+   ========================================================================= */
+.about-hero-panel {
+  position: relative;
+  background-color: #4a0806;
+  background: 
+    radial-gradient(ellipse at 25% 30%, rgba(165, 31, 27, 0.42) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 85%, rgba(49, 5, 3, 0.75) 0%, transparent 65%),
+    #4a0806;
+  border-radius: var(--radius-lg, 28px);
+  border: 1px solid rgba(255, 241, 229, 0.12);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+}
+
+/* Physical paper texture overlay */
+.about-hero-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.07) 1px, transparent 1px);
+  background-size: 6px 6px;
+  z-index: 1;
+}
+
+/* Hero Top Bar: 02 — */
+.about-hero-top-bar {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.page-marker-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.page-marker-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff1e5;
+  color: #8a1513;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.18rem 0.65rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.page-marker-rule {
+  width: 38px;
+  height: 1.5px;
+  background-color: rgba(255, 241, 229, 0.35);
+  border-radius: 1px;
+}
+
+/* Hero 2-Column Grid */
+.about-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.5fr 1px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+/* =========================================================================
+   Left Column: Heading, Biography, and Info Cards
+   ========================================================================= */
+.about-hero-left-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(4.6rem, 7.2vw, 7.5rem);
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 0.86;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.25rem 0;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.about-bio-text {
+  font-family: var(--font-body);
+  font-size: clamp(0.98rem, 1.1vw, 1.12rem);
+  line-height: 1.62;
+  color: #e2c7bc;
+  margin: 0 0 2rem 0;
+  max-width: 760px;
+}
+
+/* Info Cards Row */
+.info-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.info-card {
+  background-color: rgba(74, 8, 6, 0.65);
+  border: 1px solid rgba(255, 241, 229, 0.14);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 241, 229, 0.32);
+  background-color: rgba(74, 8, 6, 0.85);
+}
+
+.info-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(165, 31, 27, 0.85);
+  border: 1px solid rgba(255, 241, 229, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff1e5;
+  flex-shrink: 0;
+}
+
+.info-card-content {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.info-card-title {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 1.25;
+  margin-bottom: 0.2rem;
+}
+
+.info-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #e2c7bc;
+  line-height: 1.3;
+}
+
+/* Vertical Ivory Divider */
+.about-hero-divider {
+  width: 1px;
+  height: 85%;
+  background-color: rgba(255, 241, 229, 0.18);
+  align-self: center;
+}
+
+/* =========================================================================
+   Right Column: Personal Values
+   ========================================================================= */
+.about-hero-right-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.value-card {
+  background-color: rgba(74, 8, 6, 0.7);
+  border: 1px solid rgba(255, 241, 229, 0.14);
+  border-radius: 18px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 241, 229, 0.3);
+  background-color: rgba(74, 8, 6, 0.85);
+}
+
+.value-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.value-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: rgba(165, 31, 27, 0.85);
+  border: 1px solid rgba(255, 241, 229, 0.22);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff1e5;
+  flex-shrink: 0;
+}
+
+.value-card-title {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 1.2;
+}
+
+.value-card-text {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #e2c7bc;
+}
+
+/* =========================================================================
+   2. Bottom Content Panels: Learning Journey & Tech Stack
+   ========================================================================= */
+.about-bottom-panels {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.about-panel {
+  background-color: #3b0503;
+  border: 1px solid rgba(255, 241, 229, 0.1);
+  border-radius: var(--radius-lg, 28px);
+  padding: 1.75rem 2.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header-block {
+  margin-bottom: 1.75rem;
+}
+
+.panel-header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.panel-main-title {
+  font-family: var(--font-body);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 1.2;
+}
+
+.panel-title-dash {
+  width: 28px;
+  height: 1.5px;
+  background-color: #d52b27;
+  border-radius: 1px;
+}
+
+.panel-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  color: #e2c7bc;
+  margin: 0.35rem 0 0 0;
+  line-height: 1.4;
+}
+
+/* -------------------------------------------------------------------------
+   Left Panel: My Learning Journey
+   ------------------------------------------------------------------------- */
+.journey-timeline {
+  position: relative;
+  width: 100%;
+  padding-top: 0.5rem;
+}
+
+.timeline-stages {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.timeline-stage-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.95rem;
+}
+
+/* Start dot before Stage 1 */
+.timeline-start-dot {
+  position: absolute;
+  left: -14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d52b27;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px rgba(213, 43, 39, 0.6);
+}
+
+/* Connecting line strictly between consecutive nodes */
+.timeline-stage-item:not(:last-child) .stage-node::after {
+  content: '';
+  position: absolute;
+  left: 44px;
+  right: -1.25rem;
+  height: 2px;
+  background-color: #d52b27;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.stage-icon-circle {
+  position: relative;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #a51f1b;
+  border: 2px solid rgba(255, 241, 229, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff1e5;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.timeline-stage-item:hover .stage-icon-circle {
+  transform: scale(1.08);
+  border-color: #fff1e5;
+  background-color: #c02420;
+}
+
+/* Trailing tail with dot after Stage 4 */
+.timeline-trailing-tail {
+  position: absolute;
+  left: 44px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.tail-line {
+  width: 32px;
+  height: 2px;
+  background-color: #d52b27;
+}
+
+.tail-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #d52b27;
+  box-shadow: 0 0 6px rgba(213, 43, 39, 0.6);
+}
+
+.stage-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stage-title {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 1.25;
+  margin: 0 0 0.35rem 0;
+}
+
+.stage-desc {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #e2c7bc;
+  margin: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Right Panel: Tech Stack
+   ------------------------------------------------------------------------- */
+.view-skills-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #e2c7bc;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm, 8px);
+  transition: color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.view-skills-link:hover {
+  color: #fff1e5;
+  transform: translateX(2px);
+}
+
+.link-arrow {
+  transition: transform 0.2s ease;
+}
+
+.view-skills-link:hover .link-arrow {
+  transform: translateX(3px);
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.75rem;
+}
+
+.tech-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.85rem 0.4rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 241, 229, 0.08);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.tech-tile:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 241, 229, 0.25);
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.tech-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-name {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #e2c7bc;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   Responsive Breakpoints
+   ========================================================================= */
+
+/* Compact Desktop & Laptops (< 1320px) */
+@media (max-width: 1320px) {
+  .about-hero-grid {
+    grid-template-columns: 1.45fr 1px 1fr;
+    gap: 1.75rem;
+  }
+
+  .about-main-title {
+    font-size: 5.8rem;
+  }
+
+  .timeline-stages {
+    gap: 0.85rem;
+  }
+
+  .timeline-stage-item:not(:last-child) .stage-node::after {
+    right: -0.85rem;
+  }
+}
+
+/* Tablets / Compact View (< 1080px) */
+@media (max-width: 1080px) {
+  .about-hero-panel {
+    padding: 1.75rem 2rem;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-hero-divider {
+    display: none;
+  }
+
+  .about-hero-right-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .about-bottom-panels {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Small Tablets / Phablets (< 768px) */
+@media (max-width: 768px) {
+  .about-hero-panel {
+    padding: 1.5rem 1.25rem 1.75rem 1.25rem;
+    border-radius: var(--radius-md, 16px);
+  }
+
+  .about-main-title {
+    font-size: 4rem;
+  }
+
+  .info-cards-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .about-hero-right-col {
+    grid-template-columns: 1fr;
+  }
+
+  .about-panel {
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius-md, 16px);
+  }
+
+  /* Vertical Timeline for Tablet/Mobile */
+  .timeline-stages {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .timeline-stage-item {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .stage-node {
+    margin-bottom: 0;
+  }
+
+  .timeline-start-dot {
+    display: none;
+  }
+
+  .timeline-stage-item:not(:last-child) .stage-node::after {
+    left: 21px;
+    right: auto;
+    top: 44px;
+    bottom: -1.5rem;
+    width: 2px;
+    height: auto;
+    transform: none;
+  }
+
+  .timeline-trailing-tail {
+    display: none;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* Mobile Devices (< 480px, including 320px, 360px, 390px, 412px, 430px) */
+@media (max-width: 480px) {
+  .about-section-container {
+    gap: 1rem;
+  }
+
+  .about-hero-panel {
+    padding: 1.25rem 1rem 1.5rem 1rem;
+  }
+
+  .about-main-title {
+    font-size: 3.2rem;
+  }
+
+  .about-bio-text {
+    font-size: 0.92rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-card {
+    padding: 0.85rem 0.95rem;
+  }
+
+  .value-card {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .value-card-title {
+    font-size: 1.1rem;
+  }
+
+  .panel-main-title {
+    font-size: 1.35rem;
+  }
+
+  /* Reflow Tech Grid on narrow mobile */
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tech-tile {
+    padding: 0.65rem 0.25rem;
+  }
+
+  .tech-icon-wrapper {
+    width: 32px;
+    height: 32px;
+  }
+
+  .tech-name {
+    font-size: 0.72rem;
+  }
+}
+
+/* Extra Small Mobile (320px) */
+@media (max-width: 340px) {
+  .tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-main-title {
+    font-size: 2.75rem;
+  }
+}

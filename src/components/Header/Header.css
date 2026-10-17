@@ -1,7 +1,9 @@
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   width: 100%;
   background-color: var(--color-header-burgundy);
   border-bottom: 1px solid rgba(181, 31, 37, 0.2);
@@ -132,7 +134,7 @@
 .cta-connect-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
   background-color: var(--color-ivory-warm);
   color: var(--color-header-burgundy);
   font-family: var(--font-body);
@@ -156,14 +158,6 @@
   transform: translateY(0);
 }
 
-.cta-arrow {
-  transition: transform 0.2s ease;
-}
-
-.cta-connect-btn:hover .cta-arrow {
-  transform: translateX(3px);
-}
-
 /* Mobile Toggle */
 .mobile-toggle-btn {
   display: none;
@@ -184,6 +178,8 @@
   border-top: 1px solid rgba(181, 31, 37, 0.3);
   padding: 1.5rem 2rem 2rem;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  max-height: calc(100vh - 75px);
+  overflow-y: auto;
 }
 
 .mobile-nav-list {
