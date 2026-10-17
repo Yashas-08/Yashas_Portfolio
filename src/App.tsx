@@ -5,6 +5,8 @@ import { FeatureStrip } from './components/FeatureStrip/FeatureStrip';
 import { AboutSection } from './components/About/AboutSection';
 import { JourneySection } from './components/Journey/JourneySection';
 import { ProjectsSection } from './components/Projects/ProjectsSection';
+import { SkillsSection } from './components/Skills/SkillsSection';
+import { ContactSection } from './components/Contact/ContactSection';
 import { ConnectModal } from './components/Modal/ConnectModal';
 import './App.css';
 
@@ -32,6 +34,16 @@ export const App: React.FC = () => {
         setTimeout(() => {
           document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
         }, 150);
+      } else if (hash === 'skills') {
+        setActivePage('Skills & Contact');
+        setTimeout(() => {
+          document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      } else if (hash === 'contact') {
+        setActivePage('Skills & Contact');
+        setTimeout(() => {
+          document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
       } else if (hash === 'home') {
         setActivePage('Home');
       }
@@ -45,13 +57,19 @@ export const App: React.FC = () => {
       const aboutElem = document.getElementById('about');
       const journeyElem = document.getElementById('journey');
       const projectsElem = document.getElementById('projects');
+      const skillsElem = document.getElementById('skills');
+      const contactElem = document.getElementById('contact');
       if (!aboutElem) return;
 
+      const contactTop = contactElem ? contactElem.getBoundingClientRect().top : Infinity;
+      const skillsTop = skillsElem ? skillsElem.getBoundingClientRect().top : Infinity;
       const projectsTop = projectsElem ? projectsElem.getBoundingClientRect().top : Infinity;
       const journeyTop = journeyElem ? journeyElem.getBoundingClientRect().top : Infinity;
       const aboutTop = aboutElem.getBoundingClientRect().top;
 
-      if (projectsTop <= 220) {
+      if (contactTop <= 220 || skillsTop <= 220) {
+        setActivePage('Skills & Contact');
+      } else if (projectsTop <= 220) {
         setActivePage('Projects');
       } else if (journeyTop <= 220) {
         setActivePage('Journey');
@@ -108,13 +126,24 @@ export const App: React.FC = () => {
         projectsElem.scrollIntoView({ behavior: 'smooth' });
       }
     } else if (p.includes('skills') || p.includes('contact')) {
-      if (p === 'contact') {
-        setIsConnectOpen(true);
-      } else {
-        showToast('Section 05: Skills & Contact section will be implemented in a subsequent phase upon approval.');
+      setActivePage('Skills & Contact');
+      window.history.replaceState(null, '', '#skills');
+      const skillsElem = document.getElementById('skills');
+      if (skillsElem) {
+        skillsElem.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
       showToast(`The "${page}" section will be implemented in subsequent phases upon approval.`);
+    }
+  };
+
+  const handleConnectClick = () => {
+    const contactElem = document.getElementById('contact');
+    if (contactElem) {
+      contactElem.scrollIntoView({ behavior: 'smooth' });
+      window.history.replaceState(null, '', '#contact');
+    } else {
+      setIsConnectOpen(true);
     }
   };
 
@@ -136,11 +165,10 @@ export const App: React.FC = () => {
   };
 
   const handleViewSkillsClick = () => {
-    const skillsElem = document.getElementById('skills-contact');
+    const skillsElem = document.getElementById('skills');
     if (skillsElem) {
       skillsElem.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      showToast('Section 05: Skills & Contact section will be implemented in a subsequent phase upon approval.');
+      window.history.replaceState(null, '', '#skills');
     }
   };
 
@@ -150,7 +178,7 @@ export const App: React.FC = () => {
       <Header
         activePage={activePage}
         onNavClick={handleNavClick}
-        onConnectClick={() => setIsConnectOpen(true)}
+        onConnectClick={handleConnectClick}
       />
 
       {/* Main Continuous Content Area */}
@@ -188,6 +216,20 @@ export const App: React.FC = () => {
             <ProjectsSection />
           </div>
         </section>
+
+        {/* Section 5: Skills (Technologies I work with) */}
+        <section id="skills" className="portfolio-section" aria-label="Skills Section">
+          <div className="skills-section-wrapper">
+            <SkillsSection />
+          </div>
+        </section>
+
+        {/* Section 6: Contact (Let's Connect) */}
+        <section id="contact" className="portfolio-section" aria-label="Contact Section">
+          <div className="contact-section-wrapper">
+            <ContactSection />
+          </div>
+        </section>
       </main>
 
       {/* Subtle Editorial Footer */}
@@ -207,7 +249,7 @@ export const App: React.FC = () => {
             </a>
             <span className="footer-dot">•</span>
             <a
-              href="https://www.linkedin.com/in/yashas-k-a/"
+              href="https://www.linkedin.com/in/k-a-yashas-188103379"
               target="_blank"
               rel="noopener noreferrer"
               className="footer-link"
@@ -234,7 +276,7 @@ export const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Connect Modal */}
+      {/* Connect Modal (Fallback) */}
       <ConnectModal
         isOpen={isConnectOpen}
         onClose={() => setIsConnectOpen(false)}

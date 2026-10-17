@@ -45,7 +45,9 @@
 
 .about-section-wrapper,
 .journey-section-wrapper,
-.projects-section-wrapper {
+.projects-section-wrapper,
+.skills-section-wrapper,
+.contact-section-wrapper {
   width: calc(100% - 4vw);
   max-width: 1640px;
   margin: 0 auto;
@@ -174,7 +176,11 @@
 /* Responsive adjustments */
 @media (max-width: 640px) {
   .home-editorial-card,
-  .about-section-wrapper {
+  .about-section-wrapper,
+  .journey-section-wrapper,
+  .projects-section-wrapper,
+  .skills-section-wrapper,
+  .contact-section-wrapper {
     width: calc(100% - 1.5rem);
   }
 

@@ -1,0 +1,453 @@
+/* =========================================================================
+   Section 05 — Skills: Technologies I Work With
+   Matches visual reference Section 05
+   ========================================================================= */
+
+.skills-section-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100svh - var(--header-height) - 1.5rem);
+  padding: 1.5rem 0 0 0;
+  box-sizing: border-box;
+}
+
+/* Atmospheric Mountain Ridge Background (Bottom-Left) */
+.skills-mountain-bg {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  width: 580px;
+  max-width: 55vw;
+  height: 280px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.75;
+}
+
+.skills-mountain-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 18px rgba(165, 31, 27, 0.35));
+}
+
+/* Main 2-Column Content Layout (Desktop) */
+.skills-content-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  gap: 2.5rem;
+  align-items: start;
+  width: 100%;
+}
+
+/* =========================================================================
+   Left Column: Introduction & Display Typography
+   ========================================================================= */
+.skills-intro-col {
+  display: flex;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+
+/* Marker: [ 05 ] ———— */
+.skills-top-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.skills-marker-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skills-marker-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #600808;
+  color: #fff1e5;
+  border: 1px solid #d52b27;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.15rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(213, 43, 39, 0.35);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.skills-marker-rule {
+  width: 44px;
+  height: 1.5px;
+  background-color: rgba(213, 43, 39, 0.6);
+  border-radius: 1px;
+}
+
+.skills-intro-text {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.skills-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.825rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #e2c7bc;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.skills-main-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-weight: 700;
+  color: #fff1e5;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem 0;
+  text-transform: uppercase;
+}
+
+.skills-lead-desc {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+  color: #e2c7bc;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* =========================================================================
+   Right Column: Tech Stack & Tools Panels
+   ========================================================================= */
+.skills-panels-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* General Panel Styles */
+.skills-panel {
+  position: relative;
+  background-color: #4a0806;
+  background: 
+    radial-gradient(ellipse at 85% 20%, rgba(165, 31, 27, 0.28) 0%, transparent 60%),
+    radial-gradient(ellipse at 15% 80%, rgba(30, 4, 3, 0.5) 0%, transparent 65%),
+    #4a0806;
+  border-radius: var(--radius-lg, 24px);
+  border: 1px solid rgba(255, 241, 229, 0.12);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
+  padding: 1.35rem 1.75rem 1.65rem 1.75rem;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skills-panel:hover {
+  border-color: rgba(213, 43, 39, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+
+/* Panel Header */
+.skills-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skills-panel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skills-badge-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background-color: #a51f1b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff1e5;
+  border: 1px solid rgba(255, 241, 229, 0.2);
+  box-shadow: 0 2px 8px rgba(165, 31, 27, 0.4);
+  flex-shrink: 0;
+}
+
+.skills-panel-title {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff1e5;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+.skills-panel-rule {
+  width: 36px;
+  height: 1.5px;
+  background-color: rgba(213, 43, 39, 0.45);
+  border-radius: 1px;
+}
+
+.skills-panel-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.785rem;
+  color: #e2c7bc;
+  opacity: 0.85;
+}
+
+/* =========================================================================
+   Tech Stack Grid
+   ========================================================================= */
+.tech-stack-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tech-stack-row {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.tech-row-primary {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.tech-row-secondary {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.tech-stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 3, 2, 0.65);
+  border: 1px solid rgba(213, 43, 39, 0.28);
+  border-radius: 14px;
+  padding: 0.85rem 0.5rem;
+  text-align: center;
+  min-height: 86px;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.tech-stack-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(213, 43, 39, 0.65);
+  background: rgba(165, 31, 27, 0.32);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.tech-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  margin-bottom: 0.45rem;
+}
+
+.tech-name {
+  font-family: var(--font-body);
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: #fff1e5;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   Tools & Platforms Grid
+   ========================================================================= */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: transform 0.2s ease;
+  user-select: none;
+}
+
+.tool-item:hover {
+  transform: translateY(-2px);
+}
+
+.tool-icon-disc {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #0d0303;
+  border: 1px solid rgba(213, 43, 39, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-item:hover .tool-icon-disc {
+  border-color: rgba(213, 43, 39, 0.75);
+  box-shadow: 0 6px 18px rgba(213, 43, 39, 0.25);
+}
+
+.tool-name {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #fff1e5;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+/* =========================================================================
+   Boundary Divider Below Skills Section
+   ========================================================================= */
+.skills-section-divider {
+  width: 100%;
+  height: 2px;
+  background: #a51f1b;
+  box-shadow: 0 0 14px rgba(213, 43, 39, 0.45);
+  margin-top: clamp(2rem, 3.5vh, 3.5rem);
+  flex-shrink: 0;
+}
+
+/* =========================================================================
+   Responsive Breakpoints
+   ========================================================================= */
+
+/* Desktop Reflow (<= 1024px) */
+@media (max-width: 1024px) {
+  .skills-content-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills-intro-text {
+    max-width: 800px;
+  }
+
+  .skills-mountain-bg {
+    display: none;
+  }
+}
+
+/* Tablets (<= 860px) */
+@media (max-width: 860px) {
+  .skills-panel {
+    padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+  }
+
+  .tech-row-primary {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .tech-row-secondary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem 0.5rem;
+  }
+}
+
+/* Mobile Devices (<= 640px) */
+@media (max-width: 640px) {
+  .skills-section-container {
+    min-height: auto;
+    padding-top: 1rem;
+  }
+
+  .skills-main-title {
+    font-size: 2.8rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .skills-panel {
+    padding: 1.15rem 1rem 1.35rem 1rem;
+    border-radius: 20px;
+  }
+
+  .skills-panel-subtitle {
+    display: none;
+  }
+
+  .tech-row-primary,
+  .tech-row-secondary {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.65rem;
+  }
+
+  .tech-stack-item {
+    min-height: 76px;
+    padding: 0.65rem 0.35rem;
+  }
+
+  .tech-icon-box {
+    height: 32px;
+    margin-bottom: 0.35rem;
+  }
+
+  .tech-name {
+    font-size: 0.72rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 0.5rem;
+  }
+
+  .tool-icon-disc {
+    width: 42px;
+    height: 42px;
+  }
+
+  .tool-name {
+    font-size: 0.72rem;
+  }
+
+  .skills-section-divider {
+    margin-top: 1.75rem;
+  }
+}
+
+/* Very Small Mobile (<= 360px) */
+@media (max-width: 360px) {
+  .skills-main-title {
+    font-size: 2.3rem;
+  }
+
+  .tech-row-primary,
+  .tech-row-secondary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
