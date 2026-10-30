@@ -1,22 +1,35 @@
 :root {
-  /* Color Tokens */
-  --color-canvas-burgundy: #4c0303;
-  --color-header-burgundy: #420202;
-  --color-red-hero: #a81c20;
-  --color-red-textured: #a61e22;
-  --color-red-dark-panel: #600808;
-  --color-ivory-warm: #f8f0e6;
-  --color-ivory-highlight: #fff9f1;
-  --color-ivory-cream: #f4ede1;
-  --color-text-cream: #fcf6ed;
-  --color-text-red: #a3181d;
-  --color-text-body-muted: #5e4b46;
-  --color-text-subtle: #8a7670;
-  --color-divider-fine: #d5beb2;
-  --color-border-card: rgba(213, 190, 178, 0.35);
+  /* Color Tokens matching portfolio specification */
+  --color-canvas-burgundy: #310503;
+  --color-header-burgundy: #280402;
+  --color-crimson-red: #a51f1b;
+  --color-accent-red: #d52b27;
+  --color-dark-maroon: #4a0806;
+  --color-warm-ivory: #fff1e5;
+  --color-muted-rose: #e2c7bc;
+
+  /* Legacy & compatibility aliases */
+  --color-red-hero: #a51f1b;
+  --color-red-textured: #a51f1b;
+  --color-red-dark-panel: #4a0806;
+  --color-ivory-warm: #fff1e5;
+  --color-ivory-highlight: #ffffff;
+  --color-ivory-cream: #fff1e5;
+  --color-text-cream: #fff1e5;
+  --color-text-red: #a51f1b;
+  --color-text-body-muted: #e2c7bc;
+  --color-text-subtle: #e2c7bc;
+  --color-divider-fine: rgba(255, 241, 229, 0.14);
+  --color-border-card: rgba(255, 241, 229, 0.12);
   --color-white: #ffffff;
 
+  /* Layout Tokens */
+  --header-height: 72px;
+  --page-gutter: clamp(20px, 4vw, 64px);
+  --content-max-width: 1780px;
+
   /* Typography */
+
   --font-display: 'Bebas Neue', 'Oswald', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-oswald: 'Oswald', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -46,7 +59,8 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   background-color: var(--color-canvas-burgundy);
-  color: var(--color-text-cream);
+
+  color: var(--color-warm-ivory);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -61,6 +75,7 @@ body {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -88,6 +103,6 @@ a {
 /* Focus styles for keyboard accessibility */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-ivory-highlight);
+  outline: 2px solid var(--color-warm-ivory);
   outline-offset: 3px;
 }

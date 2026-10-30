@@ -1,233 +1,128 @@
 /* =========================================================================
-   Section 05 — Skills: Technologies I Work With
-   Matches visual reference Section 05
+   Skills Section — Open Technology Grids
+   No large card containers, open layout directly on page background
    ========================================================================= */
 
 .skills-section-container {
-  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: calc(100svh - var(--header-height) - 1.5rem);
-  padding: 1.5rem 0 0 0;
-  box-sizing: border-box;
-}
-
-/* Atmospheric Mountain Ridge Background (Bottom-Left) */
-.skills-mountain-bg {
-  position: absolute;
-  bottom: 30px;
-  left: -20px;
-  width: 580px;
-  max-width: 55vw;
-  height: 280px;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.75;
-}
-
-.skills-mountain-svg {
-  width: 100%;
-  height: 100%;
-  filter: drop-shadow(0 0 18px rgba(165, 31, 27, 0.35));
-}
-
-/* Main 2-Column Content Layout (Desktop) */
-.skills-content-layout {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 0.85fr 1.35fr;
-  gap: 2.5rem;
-  align-items: start;
-  width: 100%;
+  gap: clamp(2.5rem, 5vw, 4rem);
 }
 
 /* =========================================================================
-   Left Column: Introduction & Display Typography
+   1. Section Introduction (Open Editorial Header)
    ========================================================================= */
-.skills-intro-col {
+.skills-intro-block {
   display: flex;
   flex-direction: column;
-  padding-top: 0.5rem;
-}
-
-/* Marker: [ 05 ] ———— */
-.skills-top-bar {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.skills-marker-group {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.skills-marker-num {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #600808;
-  color: #fff1e5;
-  border: 1px solid #d52b27;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 700;
-  padding: 0.15rem 0.75rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(213, 43, 39, 0.35);
-  line-height: 1;
-  letter-spacing: 0.05em;
-}
-
-.skills-marker-rule {
-  width: 44px;
-  height: 1.5px;
-  background-color: rgba(213, 43, 39, 0.6);
-  border-radius: 1px;
-}
-
-.skills-intro-text {
-  display: flex;
-  flex-direction: column;
-  max-width: 500px;
+  max-width: 80ch;
 }
 
 .skills-eyebrow {
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 0.825rem;
   font-weight: 600;
   letter-spacing: 0.22em;
-  color: #e2c7bc;
+  color: var(--color-accent-red);
   text-transform: uppercase;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.65rem;
 }
 
 .skills-main-title {
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 5.2vw, 5.4rem);
+  font-size: clamp(3.4rem, 5.8vw, 5.8rem);
   font-weight: 700;
-  color: #fff1e5;
-  line-height: 0.95;
+  color: var(--color-warm-ivory);
+  line-height: 0.94;
   letter-spacing: 0.02em;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 1.25rem 0;
   text-transform: uppercase;
 }
 
 .skills-lead-desc {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
-  color: #e2c7bc;
-  line-height: 1.65;
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  color: var(--color-muted-rose);
+  line-height: 1.72;
   margin: 0;
 }
 
+.skills-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 241, 229, 0.12);
+}
+
 /* =========================================================================
-   Right Column: Tech Stack & Tools Panels
+   2. Technology Groups (Open Editorial Layout)
    ========================================================================= */
-.skills-panels-col {
+.skills-group-block {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.75rem;
 }
 
-/* General Panel Styles */
-.skills-panel {
-  position: relative;
-  background-color: #4a0806;
-  background: 
-    radial-gradient(ellipse at 85% 20%, rgba(165, 31, 27, 0.28) 0%, transparent 60%),
-    radial-gradient(ellipse at 15% 80%, rgba(30, 4, 3, 0.5) 0%, transparent 65%),
-    #4a0806;
-  border-radius: var(--radius-lg, 24px);
-  border: 1px solid rgba(255, 241, 229, 0.12);
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.45);
-  padding: 1.35rem 1.75rem 1.65rem 1.75rem;
-  overflow: hidden;
-  transition: border-color 0.25s ease, box-shadow 0.25s ease;
-}
-
-.skills-panel:hover {
-  border-color: rgba(213, 43, 39, 0.4);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55);
-}
-
-/* Panel Header */
-.skills-panel-header {
+.skills-group-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
-.skills-panel-title-group {
+.skills-title-row {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .skills-badge-icon {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background-color: #a51f1b;
+  background-color: rgba(165, 31, 27, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff1e5;
-  border: 1px solid rgba(255, 241, 229, 0.2);
-  box-shadow: 0 2px 8px rgba(165, 31, 27, 0.4);
+  color: var(--color-warm-ivory);
+  border: 1px solid rgba(255, 241, 229, 0.16);
   flex-shrink: 0;
 }
 
-.skills-panel-title {
+.skills-group-title {
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  color: #fff1e5;
+  color: var(--color-warm-ivory);
   margin: 0;
   letter-spacing: 0.01em;
 }
 
-.skills-panel-rule {
-  width: 36px;
-  height: 1.5px;
-  background-color: rgba(213, 43, 39, 0.45);
+.skills-group-dash {
+  width: 28px;
+  height: 2px;
+  background-color: var(--color-accent-red);
   border-radius: 1px;
 }
 
-.skills-panel-subtitle {
+.skills-group-subtitle {
   font-family: var(--font-body);
-  font-size: 0.785rem;
-  color: #e2c7bc;
+  font-size: 0.875rem;
+  color: var(--color-muted-rose);
   opacity: 0.85;
 }
 
 /* =========================================================================
-   Tech Stack Grid
+   Tech Stack Open Grid (Fluid 6 columns on desktop, open on background)
    ========================================================================= */
-.tech-stack-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.tech-stack-row {
+.tech-stack-open-grid {
   display: grid;
-  gap: 0.85rem;
-}
-
-.tech-row-primary {
-  grid-template-columns: repeat(5, 1fr);
-}
-
-.tech-row-secondary {
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  width: 100%;
 }
 
 .tech-stack-item {
@@ -235,51 +130,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(26, 3, 2, 0.65);
-  border: 1px solid rgba(213, 43, 39, 0.28);
-  border-radius: 14px;
-  padding: 0.85rem 0.5rem;
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 1.15rem 0.5rem;
   text-align: center;
-  min-height: 86px;
+  min-height: 95px;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
+    background-color 0.2s ease;
   user-select: none;
 }
 
 .tech-stack-item:hover {
   transform: translateY(-2px);
-  border-color: rgba(213, 43, 39, 0.65);
-  background: rgba(165, 31, 27, 0.32);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 241, 229, 0.04);
 }
 
 .tech-icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 38px;
-  margin-bottom: 0.45rem;
+  height: 40px;
+  margin-bottom: 0.5rem;
 }
 
 .tech-name {
   font-family: var(--font-body);
-  font-size: 0.775rem;
-  font-weight: 600;
-  color: #fff1e5;
-  line-height: 1.15;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-warm-ivory);
+  line-height: 1.2;
   white-space: nowrap;
 }
 
 /* =========================================================================
-   Tools & Platforms Grid
+   Tools & Platforms Open Grid (Fluid 9 columns on desktop)
    ========================================================================= */
-.tools-grid {
+.tools-open-grid {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  gap: 0.75rem;
+  gap: 0.85rem;
   align-items: start;
+  width: 100%;
 }
 
 .tool-item {
@@ -287,7 +178,9 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  padding: 0.75rem 0.25rem;
+  border-radius: 10px;
   transition: transform 0.2s ease;
   user-select: none;
 }
@@ -300,26 +193,26 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #0d0303;
-  border: 1px solid rgba(213, 43, 39, 0.35);
+  background-color: rgba(24, 3, 3, 0.65);
+  border: 1px solid rgba(213, 43, 39, 0.32);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .tool-item:hover .tool-icon-disc {
-  border-color: rgba(213, 43, 39, 0.75);
-  box-shadow: 0 6px 18px rgba(213, 43, 39, 0.25);
+  border-color: rgba(213, 43, 39, 0.7);
+  box-shadow: 0 4px 14px rgba(213, 43, 39, 0.25);
 }
 
 .tool-name {
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 500;
-  color: #fff1e5;
-  line-height: 1.15;
+  color: var(--color-muted-rose);
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -329,9 +222,9 @@
 .skills-section-divider {
   width: 100%;
   height: 2px;
-  background: #a51f1b;
+  background: var(--color-crimson-red);
   box-shadow: 0 0 14px rgba(213, 43, 39, 0.45);
-  margin-top: clamp(2rem, 3.5vh, 3.5rem);
+  margin-top: 1rem;
   flex-shrink: 0;
 }
 
@@ -339,87 +232,55 @@
    Responsive Breakpoints
    ========================================================================= */
 
-/* Desktop Reflow (<= 1024px) */
-@media (max-width: 1024px) {
-  .skills-content-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+/* Desktop & Laptop Reflow (<= 1180px) */
+@media (max-width: 1180px) {
+  .tech-stack-open-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 
-  .skills-intro-text {
-    max-width: 800px;
-  }
-
-  .skills-mountain-bg {
-    display: none;
+  .tools-open-grid {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 /* Tablets (<= 860px) */
 @media (max-width: 860px) {
-  .skills-panel {
-    padding: 1.25rem 1.25rem 1.5rem 1.25rem;
+  .skills-main-title {
+    font-size: 3.8rem;
   }
 
-  .tech-row-primary {
-    grid-template-columns: repeat(5, 1fr);
+  .tech-stack-open-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
-  .tech-row-secondary {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .tools-grid {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 1rem 0.5rem;
+  .tools-open-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem 0.75rem;
   }
 }
 
 /* Mobile Devices (<= 640px) */
 @media (max-width: 640px) {
-  .skills-section-container {
-    min-height: auto;
-    padding-top: 1rem;
-  }
-
   .skills-main-title {
     font-size: 2.8rem;
-    line-height: 1;
-    margin-bottom: 1rem;
   }
 
-  .skills-panel {
-    padding: 1.15rem 1rem 1.35rem 1rem;
-    border-radius: 20px;
-  }
-
-  .skills-panel-subtitle {
+  .skills-group-subtitle {
     display: none;
   }
 
-  .tech-row-primary,
-  .tech-row-secondary {
+  .tech-stack-open-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 0.65rem;
   }
 
   .tech-stack-item {
-    min-height: 76px;
-    padding: 0.65rem 0.35rem;
-  }
-
-  .tech-icon-box {
-    height: 32px;
-    margin-bottom: 0.35rem;
+    min-height: 80px;
+    padding: 0.65rem 0.25rem;
   }
 
   .tech-name {
-    font-size: 0.72rem;
-  }
-
-  .tools-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem 0.5rem;
+    font-size: 0.75rem;
   }
 
   .tool-icon-disc {
@@ -428,11 +289,7 @@
   }
 
   .tool-name {
-    font-size: 0.72rem;
-  }
-
-  .skills-section-divider {
-    margin-top: 1.75rem;
+    font-size: 0.75rem;
   }
 }
 
@@ -442,12 +299,11 @@
     font-size: 2.3rem;
   }
 
-  .tech-row-primary,
-  .tech-row-secondary {
+  .tech-stack-open-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .tools-grid {
+  .tools-open-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }

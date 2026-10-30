@@ -188,6 +188,7 @@ export const App: React.FC = () => {
           <div className="home-editorial-card">
             <Hero
               onViewWorkClick={handleViewWorkClick}
+              onConnectClick={handleConnectClick}
               onScrollDownClick={handleScrollDownClick}
             />
             <div id="highlights-section" className="feature-strip-anchor">

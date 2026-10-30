@@ -1,62 +1,60 @@
 import React from 'react';
-import { Monitor, Code, Lightbulb, GraduationCap } from 'lucide-react';
+import { Target, Layers, GraduationCap, Briefcase } from 'lucide-react';
 import './FeatureStrip.css';
 
-export interface FeatureItem {
+export interface HighlightItem {
   id: string;
   icon: React.ReactNode;
-  title: string;
-  description: string;
+  primary: string;
+  secondary: string;
 }
 
 export const FeatureStrip: React.FC = () => {
-  const features: FeatureItem[] = [
+  const highlights: HighlightItem[] = [
     {
-      id: 'ai-ml',
-      icon: <Monitor size={24} strokeWidth={1.8} className="feature-icon" />,
-      title: 'AI & ML',
-      description: 'Exploring intelligent solutions',
+      id: 'projects',
+      icon: <Target size={20} strokeWidth={2.2} />,
+      primary: '5+',
+      secondary: 'Projects',
     },
     {
-      id: 'web-dev',
-      icon: <Code size={24} strokeWidth={1.8} className="feature-icon" />,
-      title: 'Web Development',
-      description: 'Building modern applications',
+      id: 'tech',
+      icon: <Layers size={20} strokeWidth={2.2} />,
+      primary: 'Technologies',
+      secondary: 'AI/ML & Full Stack',
     },
     {
-      id: 'problem-solving',
-      icon: <Lightbulb size={24} strokeWidth={1.8} className="feature-icon" />,
-      title: 'Problem Solving',
-      description: 'Turning ideas into products',
+      id: 'learning',
+      icon: <GraduationCap size={20} strokeWidth={2.2} />,
+      primary: 'Continuous',
+      secondary: 'Learning',
     },
     {
-      id: 'education',
-      icon: <GraduationCap size={24} strokeWidth={1.8} className="feature-icon" />,
-      title: 'B.Tech CSE (AI & ML)',
-      description: 'Yenepoya University, Bengaluru',
+      id: 'opportunities',
+      icon: <Briefcase size={20} strokeWidth={2.2} />,
+      primary: 'Open to',
+      secondary: 'Opportunities',
     },
   ];
 
   return (
-    <section className="feature-strip" aria-label="Core Technical Highlights">
-      <div className="feature-grid">
-        {features.map((feature, index) => (
-          <div key={feature.id} className="feature-item-wrapper">
-            <div className="feature-card">
-              <div className="feature-icon-box" aria-hidden="true">
-                {feature.icon}
-              </div>
-              <div className="feature-content">
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-desc">{feature.description}</p>
-              </div>
+    <div className="feature-strip-bar" aria-label="Key Profile Highlights">
+      <div className="feature-strip-inner">
+        {highlights.map((item, index) => (
+          <div key={item.id} className="feature-strip-column">
+            <div className="feature-strip-icon-circle" aria-hidden="true">
+              {item.icon}
             </div>
-            {index < features.length - 1 && (
-              <div className="feature-divider" aria-hidden="true" />
+            <div className="feature-strip-text">
+              <span className="feature-strip-primary">{item.primary}</span>
+              <span className="feature-strip-secondary">{item.secondary}</span>
+            </div>
+            {index < highlights.length - 1 && (
+              <div className="feature-strip-divider" aria-hidden="true" />
             )}
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };

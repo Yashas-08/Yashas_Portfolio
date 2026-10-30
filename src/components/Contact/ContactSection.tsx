@@ -4,7 +4,6 @@ import {
   Briefcase,
   Lightbulb,
   MapPin,
-  Headphones,
   ArrowRight,
   AlertCircle,
 } from 'lucide-react';
@@ -116,139 +115,103 @@ export const ContactSection: React.FC = () => {
   const socialLinks = [
     {
       name: 'GitHub',
+      handle: '@Yashas-08',
       url: 'https://github.com/Yashas-08',
-      icon: <GithubCircleIcon size={24} />,
+      icon: <GithubCircleIcon size={20} />,
       isExternal: true,
     },
     {
       name: 'LinkedIn',
+      handle: 'in/k-a-yashas',
       url: 'https://www.linkedin.com/in/k-a-yashas-188103379',
-      icon: <LinkedInIcon size={22} className="social-svg-icon" />,
+      icon: <LinkedInIcon size={19} className="social-svg-icon" />,
       isExternal: true,
     },
     {
       name: 'Instagram',
+      handle: '@yashas____08',
       url: 'https://www.instagram.com/yashas____08/',
-      icon: <InstagramIcon size={22} className="social-svg-icon" />,
+      icon: <InstagramIcon size={19} className="social-svg-icon" />,
       isExternal: true,
     },
     {
-      name: 'Email',
+      name: 'Email Direct',
+      handle: 'yashas1325143@gmail.com',
       url: 'mailto:yashas1325143@gmail.com',
-      icon: <Mail size={22} className="social-svg-icon" />,
+      icon: <Mail size={19} className="social-svg-icon" />,
       isExternal: false,
     },
   ];
 
   return (
     <div className="contact-section-container">
-      {/* Subtle Mountain Topography Background */}
-      <div className="contact-mountain-bg" aria-hidden="true">
-        <svg
-          viewBox="0 0 600 240"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="contact-mountain-svg"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0 240 L0 180 L80 110 L160 170 L240 90 L340 190 L440 130 L540 200 L600 150 L600 240 Z"
-            fill="#2c0403"
-            fillOpacity="0.55"
-          />
-          <path
-            d="M0 180 L80 110 L160 170 L240 90 L340 190 L440 130 L540 200 L600 150"
-            stroke="#D52B27"
-            strokeWidth="1.2"
-            strokeOpacity="0.3"
-          />
-        </svg>
-      </div>
-
-      <div className="contact-main-grid">
+      {/* 3-Column Wide Editorial Layout on Desktop */}
+      <div className="contact-three-col-layout">
         {/* =========================================================================
-           Column 1 (Left): Introduction & Information Panels
+           Column 1: Introduction & Contact / Professional Details
            ========================================================================= */}
-        <div className="contact-intro-col">
-          {/* Eyebrow Header: [Mail icon] CONTACT — */}
-          <div className="contact-top-bar" aria-hidden="true">
-            <span className="contact-badge-icon">
-              <Mail size={16} strokeWidth={2.4} />
-            </span>
-            <span className="contact-eyebrow">CONTACT</span>
-            <span className="contact-header-rule" />
+        <div className="contact-col-intro">
+          <div className="contact-eyebrow-row" aria-hidden="true">
+            <span className="contact-eyebrow-text">GET IN TOUCH</span>
+            <span className="contact-eyebrow-rule" />
           </div>
 
           <h2 className="contact-main-title">LET'S CONNECT</h2>
 
           <p className="contact-lead-desc">
             Have a question, idea, or opportunity? I'd love to hear from you.
-            Feel free to drop a message and I'll get back to you as soon as
-            possible.
+            Feel free to drop a message or reach out across any of the platforms.
           </p>
 
-          {/* 3 Information Panels */}
-          <div className="contact-info-cards" aria-label="Professional Details">
-            {/* Opportunities */}
-            <div className="contact-info-card">
-              <div className="info-badge-icon" aria-hidden="true">
-                <Briefcase size={18} strokeWidth={2.2} />
+          {/* Open Professional Details Ledger */}
+          <div className="contact-details-ledger" aria-label="Professional Details">
+            <div className="ledger-entry">
+              <div className="ledger-entry-header">
+                <Briefcase size={15} strokeWidth={2.2} className="ledger-entry-icon" aria-hidden="true" />
+                <span className="ledger-entry-label">OPPORTUNITIES</span>
               </div>
-              <div className="info-card-text">
-                <h3 className="info-card-title">Opportunities</h3>
-                <p className="info-card-desc">
-                  Internships, full-time roles, and collaborations.
-                </p>
-              </div>
+              <p className="ledger-entry-val">
+                Internships, full-time engineering roles, and technical collaborations.
+              </p>
             </div>
 
-            {/* Interests */}
-            <div className="contact-info-card">
-              <div className="info-badge-icon" aria-hidden="true">
-                <Lightbulb size={18} strokeWidth={2.2} />
+            <div className="ledger-entry">
+              <div className="ledger-entry-header">
+                <Lightbulb size={15} strokeWidth={2.2} className="ledger-entry-icon" aria-hidden="true" />
+                <span className="ledger-entry-label">INTERESTS</span>
               </div>
-              <div className="info-card-text">
-                <h3 className="info-card-title">Interests</h3>
-                <p className="info-card-desc">
-                  AI & Machine Learning, Web Development, Problem Solving.
-                </p>
-              </div>
+              <p className="ledger-entry-val">
+                AI &amp; Machine Learning, Web Development, Systems &amp; Problem Solving.
+              </p>
             </div>
 
-            {/* Location */}
-            <div className="contact-info-card">
-              <div className="info-badge-icon" aria-hidden="true">
-                <MapPin size={18} strokeWidth={2.2} />
+            <div className="ledger-entry">
+              <div className="ledger-entry-header">
+                <MapPin size={15} strokeWidth={2.2} className="ledger-entry-icon" aria-hidden="true" />
+                <span className="ledger-entry-label">LOCATION</span>
               </div>
-              <div className="info-card-text">
-                <h3 className="info-card-title">Location</h3>
-                <p className="info-card-desc">
-                  Bengaluru, Karnataka, India (Open to Remote)
-                </p>
-              </div>
+              <p className="ledger-entry-val">
+                Bengaluru, Karnataka, India · Open to Remote
+              </p>
             </div>
           </div>
         </div>
 
+        {/* Fine Vertical Rule */}
+        <div className="contact-col-divider" aria-hidden="true" />
+
         {/* =========================================================================
-           Column 2 (Center): Send a Message Form
+           Column 2: Message Form (Simple fields, restrained outlines, ivory button)
            ========================================================================= */}
-        <div className="contact-form-panel">
-          <div className="contact-panel-header">
-            <div className="contact-panel-title-group">
-              <span className="contact-badge-icon" aria-hidden="true">
-                <Mail size={18} strokeWidth={2.4} />
-              </span>
-              <h3 className="contact-panel-title">Send a Message</h3>
-              <span className="contact-panel-rule" aria-hidden="true" />
-            </div>
-            <span className="contact-panel-subtitle">
-              Let's start a conversation.
-            </span>
+        <div className="contact-col-form">
+          <div className="form-header-wrap">
+            <span className="form-kicker">DIRECT INQUIRY</span>
+            <h3 className="form-heading">Send a Message</h3>
+            <span className="form-subtext">I'll get back to you promptly.</span>
           </div>
 
           <form
-            className="contact-form"
+            className="contact-editorial-form"
             onSubmit={handleSubmit}
             noValidate
             aria-label="Send a Message Form"
@@ -256,8 +219,8 @@ export const ContactSection: React.FC = () => {
             {/* Row 1: Name and Email */}
             <div className="form-fields-row">
               <div className="form-field-group">
-                <label htmlFor="contact-name" className="visually-hidden">
-                  Your Name
+                <label htmlFor="contact-name" className="field-label">
+                  YOUR NAME
                 </label>
                 <input
                   id="contact-name"
@@ -265,7 +228,7 @@ export const ContactSection: React.FC = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your Name"
+                  placeholder="Enter your name"
                   className={`form-input ${errors.name ? 'input-error' : ''}`}
                   aria-invalid={!!errors.name}
                   aria-describedby={errors.name ? 'name-error' : undefined}
@@ -281,8 +244,8 @@ export const ContactSection: React.FC = () => {
               </div>
 
               <div className="form-field-group">
-                <label htmlFor="contact-email" className="visually-hidden">
-                  Your Email
+                <label htmlFor="contact-email" className="field-label">
+                  YOUR EMAIL
                 </label>
                 <input
                   id="contact-email"
@@ -290,7 +253,7 @@ export const ContactSection: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your Email"
+                  placeholder="name@example.com"
                   className={`form-input ${errors.email ? 'input-error' : ''}`}
                   aria-invalid={!!errors.email}
                   aria-describedby={errors.email ? 'email-error' : undefined}
@@ -308,8 +271,8 @@ export const ContactSection: React.FC = () => {
 
             {/* Row 2: Subject */}
             <div className="form-field-group">
-              <label htmlFor="contact-subject" className="visually-hidden">
-                Subject
+              <label htmlFor="contact-subject" className="field-label">
+                SUBJECT
               </label>
               <input
                 id="contact-subject"
@@ -317,7 +280,7 @@ export const ContactSection: React.FC = () => {
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
-                placeholder="Subject"
+                placeholder="Internship / Project / Collaboration"
                 className={`form-input ${errors.subject ? 'input-error' : ''}`}
                 aria-invalid={!!errors.subject}
                 aria-describedby={errors.subject ? 'subject-error' : undefined}
@@ -333,16 +296,16 @@ export const ContactSection: React.FC = () => {
 
             {/* Row 3: Message */}
             <div className="form-field-group">
-              <label htmlFor="contact-message" className="visually-hidden">
-                Message
+              <label htmlFor="contact-message" className="field-label">
+                MESSAGE
               </label>
               <textarea
                 id="contact-message"
                 name="message"
-                rows={4}
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Message"
+                placeholder="Share details about your idea, role, or inquiry..."
                 className={`form-textarea ${errors.message ? 'input-error' : ''}`}
                 aria-invalid={!!errors.message}
                 aria-describedby={errors.message ? 'message-error' : undefined}
@@ -356,9 +319,15 @@ export const ContactSection: React.FC = () => {
               )}
             </div>
 
-            {/* Feedback / Delivery Notice */}
+            {/* Feedback / Notice */}
             {submittedStatus.type === 'client-redirect' && (
               <div className="form-status-banner banner-info" role="status">
+                <span>{submittedStatus.message}</span>
+              </div>
+            )}
+
+            {submittedStatus.type === 'validation-error' && submittedStatus.message && (
+              <div className="form-status-banner banner-error" role="status">
                 <span>{submittedStatus.message}</span>
               </div>
             )}
@@ -366,7 +335,7 @@ export const ContactSection: React.FC = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="btn-send-message"
+              className="btn-contact-submit"
               aria-label="Send Message"
             >
               <span>Send Message</span>
@@ -375,25 +344,21 @@ export const ContactSection: React.FC = () => {
           </form>
         </div>
 
+        {/* Fine Vertical Rule */}
+        <div className="contact-col-divider" aria-hidden="true" />
+
         {/* =========================================================================
-           Column 3 (Right): Connect With Me Social Links
+           Column 3: Social Links / Direct Channels
            ========================================================================= */}
-        <div className="contact-connect-panel">
-          <div className="contact-panel-header">
-            <div className="contact-panel-title-group">
-              <span className="contact-badge-icon" aria-hidden="true">
-                <Headphones size={18} strokeWidth={2.4} />
-              </span>
-              <h3 className="contact-panel-title">Connect With Me</h3>
-              <span className="contact-panel-rule" aria-hidden="true" />
-            </div>
-            <span className="contact-panel-subtitle">
-              Find me on these platforms.
-            </span>
+        <div className="contact-col-social">
+          <div className="social-header-wrap">
+            <span className="social-kicker">DIRECT CHANNELS</span>
+            <h3 className="social-heading">Connect With Me</h3>
+            <span className="social-subtext">Open to messages across platforms.</span>
           </div>
 
           <div
-            className="social-links-list"
+            className="social-open-list"
             role="list"
             aria-label="Social and Communication Channels"
           >
@@ -403,21 +368,24 @@ export const ContactSection: React.FC = () => {
                 href={item.url}
                 target={item.isExternal ? '_blank' : undefined}
                 rel={item.isExternal ? 'noopener noreferrer' : undefined}
-                className="social-link-card"
+                className="social-channel-item"
                 role="listitem"
                 aria-label={
                   item.isExternal
-                    ? `${item.name} profile (opens in new tab)`
-                    : `Send email via ${item.name}`
+                    ? `${item.name} profile (${item.handle}) (opens in new tab)`
+                    : `Send email to ${item.handle}`
                 }
               >
-                <div className="social-link-left">
-                  <div className="social-icon-box">{item.icon}</div>
-                  <span className="social-link-name">{item.name}</span>
+                <div className="social-channel-left">
+                  <span className="social-channel-icon" aria-hidden="true">
+                    {item.icon}
+                  </span>
+                  <div className="social-channel-info">
+                    <span className="social-channel-name">{item.name}</span>
+                    <span className="social-channel-handle">{item.handle}</span>
+                  </div>
                 </div>
-                <div className="social-link-right">
-                  <ArrowRight size={16} strokeWidth={2.4} className="social-arrow" />
-                </div>
+                <ArrowRight size={14} strokeWidth={2.2} className="social-channel-arrow" aria-hidden="true" />
               </a>
             ))}
           </div>
